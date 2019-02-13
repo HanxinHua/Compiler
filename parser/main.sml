@@ -4,6 +4,6 @@ fun go file =
   let
     val _ = ErrorMsg.reset()
   in
-    Parse.parse file
+    PrintAbsyn.print(TextIO.stdOut,Parse.parse file)
   end
 end

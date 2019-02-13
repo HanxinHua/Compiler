@@ -1,4 +1,2 @@
 Skeleton 5
-ae"TigerLrValsFun"i2aдўToken"gp1c"TOKEN"f2дўSymbol"яjh2aдўParserData"h7aдўHeader"h1aдўA"gp1d"Absyn"aдўLrTable"gp2яяЃ%Caяgp1яbезр±яЃ%f6d"Char"Cd"List"d"String"d"General"яЃ%d"Array"Nbезр±яЃ	d2f2яЃя*aдўMlyValue"и0ad"EC"h2я‚bя‚9ж±яѓ
-ad"Actions"h2bя‚9f5CяЃd"Option"я*яЃ%яѓ
-Nяѓ&NaдўTokens"jяѓзр±гўTiger_TOKENS"h2aя9gp1c"PARSER_DATA"aя„я„&
+ae"TigerLrValsFun"i2aдўToken"gp1c"TOKEN"f2дўSymbol"яjh2aдўParserData"h7aдўHeader"h1aдўA"gp1d"Absyn"aдўLrTable"gp2яяЃ%Caяgp1яbезр±яЃ%f4d"Char"d"String"яЃ%d"Array"bезр±яЃ	d2f2яЃя*aдўMlyValue"и0ad"EC"h2я‚bя‚&ж±я‚7ad"Actions"h2bя‚&f5CяЃd"Option"я*яЃ%я‚7NяѓNaдўTokens"jяѓзр±гўTiger_TOKENS"h2aя9gp1c"PARSER_DATA"aя„я„
