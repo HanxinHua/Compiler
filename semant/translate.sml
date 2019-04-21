@@ -386,6 +386,42 @@ struct
                 )
             )
 
+	fun simplify Tree.SEQ(s1, s2) = Tree.SEQ(simplify s1, simplify s2)
+	 |  simplify Tree.BINOP(binop, Tree.BINOP(binop1, exp1, exp2), Tree.BINOP(binop2, exp3, exp4)) = 
+			let 
+				val t1 = Temp.newtemp()
+				val t2 = Temp.newtemp()
+			in
+				Tree.BINOP(binop, Tree.ESEQ(Tree.MOVE(Tree.TEMP t1,Tree.BINOP(binop1, simplify exp1, simplify exp2)), Tree.TEMP t1), Tree.ESEQ(Tree.MOVE(Tree.TEMP t2, Tree.BINOP(binop2, simplify exp3, simplify exp4)), Tree.TEMP t2)) 
+			end
+	 |  simplify Tree.BINOP(binop, Tree.BINOP(binop1, exp1, exp2), exp3) = 
+			let 
+				val t1 = Temp.newtemp()
+			in
+				Tree.BINOP(binop, Tree.ESEQ(Tree.MOVE(Tree.TEMP t1,Tree.BINOP(binop1, simplify exp1, simplify exp2)), Tree.TEMP t1), simplify exp3)
+			end
+	 |  simplify Tree.BINOP(binop, exp1, Tree.BINOP(binop2, exp3, exp4)) = 
+			let 
+				val t2 = Temp.newtemp()
+			in
+				Tree.BINOP(binop, simplify exp1, Tree.ESEQ(Tree.MOVE(Tree.TEMP t2, Tree.BINOP(binop2, simplify exp3, simplify exp4)), Tree.TEMP t2)) 
+			end
+	 |  simplify Tree.BINOP(binop, Tree.BINOP(binop1, exp1, exp2), Tree.BINOP(binop2, exp3, exp4)) = 
+			let 
+				val t1 = Temp.newtemp()
+				val t2 = Temp.newtemp()
+			in
+				Tree.BINOP(binop, Tree.ESEQ(Tree.MOVE(Tree.TEMP t1,Tree.BINOP(binop1, simplify exp1, simplify exp2)), Tree.TEMP t1), Tree.ESEQ(Tree.MOVE(Tree.TEMP t2, Tree.BINOP(binop2, simplify exp3, simplify exp4)), Tree.TEMP t2)) 
+			end
+	 |  simplify Tree.LABEL(l) = Tree.LABEL(l)
+	 |  simplify Tree.JUMP(exp, llist) =
+	 |  simplify Tree.LABEL(l) =
+	 |  simplify Tree.LABEL(l) =
+	 |  simplify Tree.LABEL(l) =
+	 |  simplify Tree.LABEL(l) =
+	 |  simplify Tree.LABEL(l) =
+	 |  simplify Tree.LABEL(l) =
+	
 	fun procEntryExit {level = Lev({parent=pa, frame=frame}, u), body=exp} =
         frags := !frags @ [Frame.PROC{
                 body=Frame.procEntryExit1(
